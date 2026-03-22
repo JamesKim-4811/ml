@@ -76,10 +76,10 @@ class HousingDataset(Dataset):
 
     def load(self):
 
-        df_train = pd.read_csv(self.data["paths"]["train"], delim_whitespace=True, 
+        df_train = pd.read_csv(self.data["paths"]["train"], sep='\s+', 
                         header=None, names=self.data["columns"])
 
-        df_val = pd.read_csv(self.data["paths"]["val"], delim_whitespace=True, 
+        df_val = pd.read_csv(self.data["paths"]["val"], sep='\s+', 
                         header=None, names=self.data["columns"])
 
         return df_train, df_val
